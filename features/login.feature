@@ -5,23 +5,24 @@ Funcionalidade: Login
     Quero acessar o sistema com meu email e senha
     Para que eu possa ter acesso as playlists do Parodify
 
+    @smoke
     Cenario: Login do usuário
 
         Dado que acesso a página login
-        Quando submeto minhas credenciais com: "diego@bol.com" e "pwd123"
+        Quando submeto minhas credenciais com: "diego@bol.com.br" e "pwd123"
         Então devo ser redirecionado para a área logada
 
     Esquema do Cenário: Tentativa de login
 
         Dado que acesso a página login
         Quando submeto minhas credenciais com: "<email>" e "<senha>"
-        Então devo ver a mensagem de erro: "<mensagem_saida>"
+        Então devo ver a mensagem de erro: "Opps! Dados de acesso incorretos!"
 
         Exemplos:
-            |email             | senha  |
-            |diego@404.com.br  | abc123 |
+            | email            | senha  |
+            | diego@404.com.br | abc123 |
             |                  |        |
-            |diego@yahoo.com   |        |
-            |diego@404.com.br  |        |
+            | diego@yahoo.com  |        |
+            | diego@404.com.br |        |
 
 
